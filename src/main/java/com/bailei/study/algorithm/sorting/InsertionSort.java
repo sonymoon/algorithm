@@ -1,5 +1,9 @@
 package com.bailei.study.algorithm.sorting;
 
+import com.bailei.study.algorithm.utils.ArrayUtil;
+
+import static java.lang.System.currentTimeMillis;
+
 /**
  * Created by bailei on 2016/8/25.
  */
@@ -33,17 +37,12 @@ public class InsertionSort {
 
     public static void main(String[] args) {
         InsertionSort insertionSort = new InsertionSort();
-        int a[] = new int[]{5, 2, 4, 6, 1, 3};
-        insertionSort.incrSort(a);
-        for (int i : a) {
-            System.out.print(i + ", ");
-        }
-        System.out.println();
-        insertionSort.descSort(a);
-        for (int i : a) {
-            System.out.print(i + ", ");
-        }
-        System.out.println();
+        int[] bigTable = new int[1024];
+        long curTime = currentTimeMillis();
+        insertionSort.incrSort(ArrayUtil.randomInit(bigTable));
+        curTime = ArrayUtil.print(bigTable, curTime);
+        insertionSort.descSort(ArrayUtil.randomInit(bigTable));
+        ArrayUtil.print(bigTable, curTime);
     }
 
 }
