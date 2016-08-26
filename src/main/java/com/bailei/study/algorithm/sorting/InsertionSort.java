@@ -7,7 +7,7 @@ import static java.lang.System.currentTimeMillis;
 /**
  * Created by bailei on 2016/8/25.
  */
-public class InsertionSort {
+public class InsertionSort implements Sort {
 
     public void incrSort(int[] a) {
 
@@ -34,6 +34,10 @@ public class InsertionSort {
         }
     }
 
+    @Override
+    public void sort(int[] a) {
+
+    }
 
     public static void main(String[] args) {
         InsertionSort insertionSort = new InsertionSort();
@@ -44,5 +48,6 @@ public class InsertionSort {
         insertionSort.descSort(ArrayUtil.randomInit(bigTable));
         ArrayUtil.print(bigTable, curTime);
     }
+
 
 }
