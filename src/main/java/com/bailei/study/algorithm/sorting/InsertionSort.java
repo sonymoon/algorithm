@@ -14,7 +14,7 @@ public class InsertionSort implements Sort {
         for (int j = 1; j < a.length; j++) {
             int i = j - 1;
             int key = a[j];
-            while (i >= 0 && a[i] > key) {
+            while (i >= 0 && a[i] > key) {      //不变式a[j...n] 未排序，a[0...j-1]已排好序，key=a[j]不断往左边插入到合适的位置
                 a[i + 1] = a[i];
                 a[i] = key;
                 --i;
@@ -36,7 +36,7 @@ public class InsertionSort implements Sort {
 
     @Override
     public void sort(int[] a) {
-
+        incrSort(a);
     }
 
     public static void main(String[] args) {

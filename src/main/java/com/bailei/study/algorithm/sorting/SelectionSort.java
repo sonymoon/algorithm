@@ -15,7 +15,7 @@ public class SelectionSort implements Sort {
             int minIndex = i;
             for (int j = i + 1; j < a.length; j++) {
                 if (a[j] < a[minIndex]) {
-                    minIndex = j; //找到a[j...n]最小的
+                    minIndex = j; //找到不变式a[j...n]最小的
                 }
             }
             if (minIndex != i) { //最小不在 不变式中
