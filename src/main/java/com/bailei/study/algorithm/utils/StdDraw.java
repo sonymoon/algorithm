@@ -1,3 +1,4 @@
+package com.bailei.study.algorithm.utils;
 /******************************************************************************
  *  Compilation:  javac StdDraw.java
  *  Execution:    java StdDraw

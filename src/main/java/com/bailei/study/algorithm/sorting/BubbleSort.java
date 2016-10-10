@@ -17,15 +17,18 @@ public class BubbleSort implements Sort {
                     a[j] = a[j - 1];
                     a[j - 1] = temp;
                 }
+                ArrayUtil.draw(a, i, j);
             }
+
         }
     }
 
     public static void main(String[] args) {
         Sort sort = new BubbleSort();
-        Integer[] bigTable = new Integer[1024];
+        Integer[] bigTable = new Integer[10];
         long curTime = currentTimeMillis();
         sort.sort(ArrayUtil.randomInit(bigTable));
         ArrayUtil.print(bigTable, curTime);
+        assert sort.isSorted(bigTable);
     }
 }
