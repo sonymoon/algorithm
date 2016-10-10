@@ -10,18 +10,16 @@ import static java.lang.System.currentTimeMillis;
 public class SelectionSort implements Sort {
 
     @Override
-    public void sort(int[] a) {
+    public void sort(Comparable[] a) {
         for (int i = 0; i < a.length; i++) {
             int minIndex = i;
             for (int j = i + 1; j < a.length; j++) {
-                if (a[j] < a[minIndex]) {
+                if (less(a[j], a[minIndex])) {
                     minIndex = j; //找到不变式a[j...n]最小的
                 }
             }
             if (minIndex != i) { //最小不在 不变式中
-                a[minIndex] = a[i] + a[minIndex];
-                a[i] = a[minIndex] - a[i]; //swap for a[i]
-                a[minIndex] = a[minIndex] - a[i]; //swap for a[minIndex]
+                exch(a, minIndex, i);
             }
         }
     }
@@ -29,7 +27,7 @@ public class SelectionSort implements Sort {
 
     public static void main(String[] args) {
         Sort selectionSort = new SelectionSort();
-        int[] bigTable = new int[1024];
+        Comparable[] bigTable = new Comparable[1024];
         long curTime = currentTimeMillis();
         selectionSort.sort(ArrayUtil.randomInit(bigTable));
         ArrayUtil.print(bigTable, curTime);

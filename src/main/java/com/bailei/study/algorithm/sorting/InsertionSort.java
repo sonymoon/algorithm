@@ -9,12 +9,12 @@ import static java.lang.System.currentTimeMillis;
  */
 public class InsertionSort implements Sort {
 
-    public void incrSort(int[] a) {
+    public void incrSort(Comparable[] a) {
 
         for (int j = 1; j < a.length; j++) {
             int i = j - 1;
-            int key = a[j];
-            while (i >= 0 && a[i] > key) {      //不变式a[j...n] 未排序，a[0...j-1]已排好序，key=a[j]不断往左边插入到合适的位置
+            Comparable key = a[j];
+            while (i >= 0 && greater(a[i], key)) {      //不变式a[j...n] 未排序，a[0...j-1]已排好序，key=a[j]不断往左边插入到合适的位置
                 a[i + 1] = a[i];
                 a[i] = key;
                 --i;
@@ -22,11 +22,11 @@ public class InsertionSort implements Sort {
         }
     }
 
-    public void descSort(int a[]) {
+    public void descSort(Comparable a[]) {
         for (int j = a.length - 1 - 1; j >= 0; j--) {
             int i = j + 1;
-            int temp = a[j];
-            while (i < a.length && a[i] > temp) {
+            Comparable temp = a[j];
+            while (i < a.length && greater(a[i], temp)) {
                 a[i - 1] = a[i];
                 a[i] = temp;
                 i++;
@@ -35,13 +35,13 @@ public class InsertionSort implements Sort {
     }
 
     @Override
-    public void sort(int[] a) {
+    public void sort(Comparable[] a) {
         incrSort(a);
     }
 
     public static void main(String[] args) {
         InsertionSort insertionSort = new InsertionSort();
-        int[] bigTable = new int[1024];
+        Comparable[] bigTable = new Comparable[1024];
         long curTime = currentTimeMillis();
         insertionSort.incrSort(ArrayUtil.randomInit(bigTable));
         curTime = ArrayUtil.print(bigTable, curTime);

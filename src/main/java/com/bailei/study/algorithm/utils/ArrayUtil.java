@@ -7,7 +7,7 @@ import static java.lang.System.currentTimeMillis;
  */
 public class ArrayUtil {
 
-    public static int[] randomInit(int[] a) {
+    public static Comparable[] randomInit(Comparable[] a) {
         for (int i = 0; i < a.length; i++) {
             a[i] = RandomUtils.nextInt(0, a.length);
 

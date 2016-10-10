@@ -45,6 +45,8 @@
  *
  ******************************************************************************/
 
+import com.bailei.study.algorithm.utils.StdOut;
+
 import java.util.Random;
 
 /**
