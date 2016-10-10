@@ -17,6 +17,7 @@ public class InsertionSort implements Sort {
             while (i >= 0 && greater(a[i], key)) {      //不变式a[j...n] 未排序，a[0...j-1]已排好序，key=a[j]不断往左边插入到合适的位置
                 a[i + 1] = a[i];
                 a[i] = key;
+                ArrayUtil.draw(a, i, j);
                 --i;
             }
         }
@@ -41,7 +42,7 @@ public class InsertionSort implements Sort {
 
     public static void main(String[] args) {
         InsertionSort insertionSort = new InsertionSort();
-        Comparable[] bigTable = new Comparable[1024];
+        Comparable[] bigTable = new Comparable[20];
         long curTime = currentTimeMillis();
         insertionSort.incrSort(ArrayUtil.randomInit(bigTable));
         curTime = ArrayUtil.print(bigTable, curTime);

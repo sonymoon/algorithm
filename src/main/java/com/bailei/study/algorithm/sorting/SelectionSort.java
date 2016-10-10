@@ -17,8 +17,10 @@ public class SelectionSort implements Sort {
                 if (less(a[j], a[minIndex])) {
                     minIndex = j; //找到不变式a[j...n]最小的
                 }
+                ArrayUtil.draw(a, i, j);
             }
             if (minIndex != i) { //最小不在 不变式中
+                ArrayUtil.draw(a, i, minIndex);
                 exch(a, minIndex, i);
             }
         }
@@ -27,7 +29,7 @@ public class SelectionSort implements Sort {
 
     public static void main(String[] args) {
         Sort selectionSort = new SelectionSort();
-        Comparable[] bigTable = new Comparable[1024];
+        Comparable[] bigTable = new Comparable[10];
         long curTime = currentTimeMillis();
         selectionSort.sort(ArrayUtil.randomInit(bigTable));
         ArrayUtil.print(bigTable, curTime);
