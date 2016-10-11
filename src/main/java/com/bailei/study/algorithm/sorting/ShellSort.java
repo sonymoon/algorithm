@@ -27,11 +27,11 @@ public class ShellSort implements Sort {
 
 
     public static void main(String[] args) {
-        ShellSort shellSort = new ShellSort();
-        Comparable[] bigTable = new Comparable[20];
+        Sort sort = new ShellSort();
+        Comparable[] a = new Comparable[1000];
         long curTime = currentTimeMillis();
-        shellSort.sort(ArrayUtil.randomInit(bigTable));
-        ArrayUtil.print(bigTable, curTime);
-        assert(shellSort.isSorted(bigTable) == true);
+        sort.sort(ArrayUtil.randomInit(a));
+        ArrayUtil.print(a, curTime);
+        assert sort.isSorted(a);
     }
 }
