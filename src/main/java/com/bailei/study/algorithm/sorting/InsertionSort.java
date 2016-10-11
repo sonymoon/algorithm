@@ -44,7 +44,7 @@ public class InsertionSort implements Sort {
         InsertionSort insertionSort = new InsertionSort();
         Comparable[] bigTable = new Comparable[20];
         long curTime = currentTimeMillis();
-        insertionSort.incrSort(ArrayUtil.randomInit(bigTable));
+        insertionSort.sort(ArrayUtil.randomInit(bigTable));
         curTime = ArrayUtil.print(bigTable, curTime);
         insertionSort.descSort(ArrayUtil.randomInit(bigTable));
         ArrayUtil.print(bigTable, curTime);

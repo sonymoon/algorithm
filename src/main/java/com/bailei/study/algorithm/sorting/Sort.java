@@ -24,7 +24,7 @@ public interface Sort {
 
     default boolean isSorted(Comparable a[]) {
         for (int i = 1; i < a.length; i++) {
-            if (less(a[i], a[i + 1])) {
+            if (greater(a[i - 1], a[i])) {
                 return false;
             }
         }

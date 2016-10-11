@@ -9,10 +9,6 @@ import static java.lang.System.currentTimeMillis;
  */
 public class ArrayUtil {
 
-    static {
-        StdDraw.setPenColor(Color.black);
-    }
-
     public static Comparable[] randomInit(Comparable[] a) {
         for (int i = 0; i < a.length; i++) {
             a[i] = RandomUtils.nextInt(1, a.length);
