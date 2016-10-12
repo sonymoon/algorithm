@@ -25,6 +25,7 @@ public class MergeSort implements Sort {
         sort(a, lo, mid);
         sort(a, mid + 1, hi);
         merge(a, lo, mid, hi);
+
     }
 
 
@@ -50,7 +51,7 @@ public class MergeSort implements Sort {
 
     public static void main(String[] args) {
         Sort sort = new MergeSort();
-        Comparable[] a = new Comparable[1000];
+        Comparable[] a = new Comparable[10];
         long curTime = currentTimeMillis();
         sort.sort(ArrayUtil.randomInit(a));
         ArrayUtil.print(a, curTime);

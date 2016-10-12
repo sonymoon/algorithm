@@ -1,4 +1,4 @@
-/******************************************************************************
+package com.bailei.study.algorithm.utils; /******************************************************************************
  *  Compilation:  javac StdRandom.java
  *  Execution:    java StdRandom
  *  Dependencies: StdOut.java
@@ -44,8 +44,6 @@
  *      strength random number generator in Java.
  *
  ******************************************************************************/
-
-import com.bailei.study.algorithm.utils.StdOut;
 
 import java.util.Random;
 
