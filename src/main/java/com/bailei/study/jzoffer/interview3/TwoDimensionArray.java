@@ -38,6 +38,9 @@ public class TwoDimensionArray {
     }
 
     public static void main(String[] args) {
-        System.out.println(find(23));
+        System.out.println(find(1));
+        System.out.println(find(15));
+        System.out.println(find(9));
+        System.out.println(find(100));
     }
 }

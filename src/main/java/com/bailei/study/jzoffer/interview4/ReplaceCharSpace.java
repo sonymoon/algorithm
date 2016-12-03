@@ -32,9 +32,16 @@ public class ReplaceCharSpace {
 
     public static void main(String[] args) {
         ReplaceCharSpace replaceCharSpace = new ReplaceCharSpace();
-        char[] chars = new char[]{'w', 'e', ' ', 'a', 'r', 'e', ' ', 'h', 'a', 'p', 'p', 'y'};
-        chars = replaceCharSpace.replace(chars);
-        System.out.println(String.valueOf(chars));
+        char[] chars = new char[]{' ', 'w', 'e', ' ', 'a', 'r', 'e', ' ', ' ', 'h', 'a', 'p', 'p', 'y', ' '};
+        System.out.println(String.valueOf(replaceCharSpace.replace(chars)));
+
+        chars = new char[]{'w', 'e', 'a', 'r', 'e', 'h', 'a', 'p', 'p', 'y'};
+        System.out.println(String.valueOf(replaceCharSpace.replace(chars)));
+
+        chars = new char[]{};
+        System.out.println(String.valueOf(replaceCharSpace.replace(chars)));
+
+
     }
 
 }
