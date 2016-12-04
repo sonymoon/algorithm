@@ -28,10 +28,6 @@ public class SingleDirectList {
     public SingleDirectList() {
     }
 
-    public SingleDirectList(Node root) {
-        this.root = root;
-    }
-
     public void addToTail(int value) {
         Node newNode = new Node(value, null);
         if (this.root == null) {
