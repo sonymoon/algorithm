@@ -23,6 +23,9 @@ public class BinaryTree {
                 break;
             }
         }
+        if (rootValueIndexOfInOrder == -1) {
+            throw new RuntimeException("不能重建二叉树，序列不匹配");
+        }
 
         //leftTreeOrder & rightTreeOrder
         int leftTreeLength = rootValueIndexOfInOrder;
@@ -39,8 +42,8 @@ public class BinaryTree {
         }
         if (rightTreeLength > 0) {
             for (int i = 0; i < rightTreeLength; ++i) {
-                rightTreePreOrder[i] = preOrder[rightTreeLength + i];
-                rightTreeInOrder[i] = inOrder[rightTreeLength + i];
+                rightTreePreOrder[i] = preOrder[rootValueIndexOfInOrder + 1 + i];
+                rightTreeInOrder[i] = inOrder[rootValueIndexOfInOrder + 1 + i];
             }
         }
 
@@ -59,5 +62,18 @@ public class BinaryTree {
         BinaryTree binaryTree = new BinaryTree();
         BinaryTreeNode root = binaryTree.reconstruct(preOrder, inOrder);
         System.out.println(root);
+
+        //没有右子结点
+        int[] preOrder1 = {1, 2, 3, 4, 5};
+        int[] inOrder1 = {5, 4, 3, 2, 1};
+        root = binaryTree.reconstruct(preOrder1, inOrder1);
+        System.out.println(root);
+
+        //没有左子结点
+        int[] preOrder2 = {1, 2, 3, 4, 5};
+        int[] inOrder2 = {1, 2, 3, 4, 5};
+        root = binaryTree.reconstruct(preOrder2, inOrder2);
+        System.out.println(root);
+
     }
 }
