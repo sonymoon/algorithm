@@ -39,7 +39,7 @@ public class QuickSort implements Sort {
 
     public static void main(String[] args) {
         Sort sort = new QuickSort();
-        Comparable[] a = new Comparable[10];
+        Comparable[] a = new Comparable[12];
         long curTime = currentTimeMillis();
         sort.sort(ArrayUtil.randomInit(a));
         ArrayUtil.print(a, curTime);
