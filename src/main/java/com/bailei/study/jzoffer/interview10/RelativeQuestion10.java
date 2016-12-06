@@ -17,5 +17,6 @@ public class RelativeQuestion10 {
         System.out.println(isPowerOf2(128));
         System.out.println(isPowerOf2(127));
         System.out.println(numberOfDiffBitsBetween(9, 10));
+        System.out.println(0.0000 == 0.0);
     }
 }
