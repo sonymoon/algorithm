@@ -53,6 +53,8 @@ public class NumberOf1InBinary {
         return count;
     }
 
+
+
     public static void main(String[] args) {
         System.out.println(new NumberOf1InBinary().numberOf2(-11));
         System.out.println(new NumberOf1InBinary().numberOf3(-2147483648));
