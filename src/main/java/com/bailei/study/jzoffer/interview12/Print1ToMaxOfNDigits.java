@@ -21,10 +21,24 @@ public class Print1ToMaxOfNDigits {
             stringBuilder.append('0');
         }
 
-        while (!incrementByOne(stringBuilder)) {
-            printStrOfNumber(stringBuilder);
-        }
+//        while (!incrementByOne(stringBuilder)) {
+//            printStrOfNumber(stringBuilder);
+//        }
+        print1ToMaxNRecursively(stringBuilder, 0);
     }
+
+    private void print1ToMaxNRecursively(StringBuilder number, int index) {
+        if (index > number.length() - 1) {
+            return;
+        }
+        for (int i = 0; i < 10; i++) {
+            number.setCharAt(index, (char) (i + 48));
+            printStrOfNumber(number);
+            print1ToMaxNRecursively(number, index + 1);
+        }
+
+    }
+
 
     private boolean incrementByOne(StringBuilder stringBuilder) {
         boolean isOverFlow = false; //是否溢出
