@@ -6,9 +6,9 @@ package com.bailei.study.jzoffer.interview13;
  */
 public class ListNode {
 
-    int value;
+    public int value;
 
-    ListNode next;
+    public ListNode next;
 
     public ListNode() {
     }
