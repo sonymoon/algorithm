@@ -24,8 +24,41 @@ public class ListNode {
 
     @Override
     public String toString() {
-        return "ListNode{" +
-                "value=" + value +
-                '}';
+        return "" + this.value;
+    }
+
+
+    public static class Builder {
+
+        private ListNode head;
+
+        private ListNode tail;
+
+        public Builder node(int value) {
+            if (head == null) {
+                head = new ListNode(value);
+                tail = head;
+            } else {
+                this.tail.next = new ListNode(value);
+                this.tail = this.tail.next;
+            }
+            return this;
+        }
+
+        public Builder node(ListNode node) {
+            if (head == null) {
+                head = node;
+                tail = head;
+            } else {
+                this.tail.next = node;
+                this.tail = this.tail.next;
+            }
+            return this;
+        }
+
+
+        public ListNode build() {
+            return this.head;
+        }
     }
 }
