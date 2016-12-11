@@ -4,7 +4,7 @@ import java.util.Stack;
 
 /**
  * Created by bailei on 16/12/4.
- * 两个stack实现的栈
+ * 两个stack实现的队列
  */
 public class CQueue<T> {
 
