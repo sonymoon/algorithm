@@ -4,7 +4,7 @@ import com.bailei.study.utils.Utils;
 
 /**
  * Created by bailei on 16/12/8.
- * o（1）时间删除结点
+ * o（1）时间删除链表中结点
  */
 public class DeleteNodeInList {
 
