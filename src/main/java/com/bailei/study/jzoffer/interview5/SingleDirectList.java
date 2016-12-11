@@ -4,7 +4,7 @@ import java.util.Stack;
 
 /**
  * Created by bailei on 16/12/3.
- * 单向链表实现
+ * 单向链表实现，添加，查找，删除，打印
  */
 public class SingleDirectList {
 
