@@ -2,6 +2,7 @@ package com.bailei.study.jzoffer.interview11;
 
 /**
  * Created by bailei on 16/12/6.
+ * 计算幂方
  */
 public class Power {
 
