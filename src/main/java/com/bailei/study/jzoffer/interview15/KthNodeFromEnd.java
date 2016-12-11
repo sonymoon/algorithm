@@ -4,6 +4,7 @@ import com.bailei.study.jzoffer.interview13.ListNode;
 
 /**
  * Created by bailei on 16/12/9.
+ * 找到倒数第K个结点
  */
 public class KthNodeFromEnd {
 
