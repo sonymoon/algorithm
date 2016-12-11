@@ -2,6 +2,7 @@ package com.bailei.study.jzoffer.interview14;
 
 /**
  * Created by bailei on 16/12/9.
+ * 将数组 奇数、偶数分开
  */
 public class ReorderArray {
 
