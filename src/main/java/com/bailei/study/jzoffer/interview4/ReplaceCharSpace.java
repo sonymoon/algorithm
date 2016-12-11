@@ -2,7 +2,7 @@ package com.bailei.study.jzoffer.interview4;
 
 /**
  * Created by bailei on 16/12/3.
- * 替换空格为％20
+ * 替换空格为％20 
  */
 public class ReplaceCharSpace {
 
