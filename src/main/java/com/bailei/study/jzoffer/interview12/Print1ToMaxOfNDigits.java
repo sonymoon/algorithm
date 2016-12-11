@@ -2,7 +2,7 @@ package com.bailei.study.jzoffer.interview12;
 
 /**
  * Created by bailei on 16/12/7.
- * 打印N位数 从1到999.。。。
+ * 打印N位数的所有数 如 从1到999.。。。
  */
 public class Print1ToMaxOfNDigits {
 
