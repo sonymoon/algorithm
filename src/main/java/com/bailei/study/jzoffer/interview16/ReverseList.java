@@ -5,6 +5,7 @@ import com.bailei.study.utils.Utils;
 
 /**
  * Created by bailei on 16/12/10.
+ * 反向排列数组
  */
 public class ReverseList {
 
