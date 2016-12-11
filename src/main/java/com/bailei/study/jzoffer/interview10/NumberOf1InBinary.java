@@ -2,6 +2,7 @@ package com.bailei.study.jzoffer.interview10;
 
 /**
  * Created by bailei on 16/12/6.
+ * 数字二进制表示时，1的个数
  */
 public class NumberOf1InBinary {
 
