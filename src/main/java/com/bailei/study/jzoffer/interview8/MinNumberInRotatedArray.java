@@ -2,6 +2,7 @@ package com.bailei.study.jzoffer.interview8;
 
 /**
  * Created by bailei on 16/12/5.
+ * 旋转数组找到其中的最小值
  */
 public class MinNumberInRotatedArray {
 
