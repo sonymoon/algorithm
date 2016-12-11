@@ -2,7 +2,7 @@ package com.bailei.study.jzoffer.interview6;
 
 /**
  * Created by bailei on 16/12/4.
- * 根据前序遍历和中序遍历，重建二叉树
+ * 根据前序遍历和中序遍历数组，重建二叉树
  */
 public class BinaryTree {
 
