@@ -5,6 +5,7 @@ import com.bailei.study.utils.Utils;
 
 /**
  * Created by bailei on 16/12/10.
+ * 合并两个已排序的链表，结果也是排序的
  */
 public class MergeSortedLists {
 
