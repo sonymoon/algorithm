@@ -23,6 +23,13 @@ public class BinaryTree {
         return root;
     }
 
+    public BinaryTree() {
+    }
+
+    public BinaryTree(BinaryTreeNode root) {
+        this.root = root;
+    }
+
     private void preOrder(BinaryTreeNode root) {
         if (root != null) {
             System.out.print(root + ", ");
