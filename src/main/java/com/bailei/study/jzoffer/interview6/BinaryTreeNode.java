@@ -5,11 +5,11 @@ package com.bailei.study.jzoffer.interview6;
  */
 public class BinaryTreeNode {
 
-    int value;
+    public int value;
 
-    BinaryTreeNode pLeft;
+    public BinaryTreeNode pLeft;
 
-    BinaryTreeNode pRight;
+    public BinaryTreeNode pRight;
 
 
     public BinaryTreeNode(int value) {

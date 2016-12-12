@@ -41,7 +41,7 @@ public class BinaryTree {
         int rootValue = preOrder[startPre];
         int rootValueIndexOfInOrder = -1;
 
-        for (int i = startIn; i <= endIn; i++) {
+        for (int i = endIn; i >= startIn; i--) {
             if (rootValue == inOrder[i]) {
                 rootValueIndexOfInOrder = i;
                 break;
