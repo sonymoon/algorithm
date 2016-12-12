@@ -6,12 +6,32 @@ package com.bailei.study.jzoffer.interview6;
  */
 public class BinaryTree {
 
+    private BinaryTreeNode root;
 
-    public BinaryTreeNode reconstruct(int[] preOrder, int[] inOrder,
-                                      int startPre, int endPre,
-                                      int startIn, int endIn) {
+    public BinaryTreeNode reconstruct(int[] preOrder, int[] inOrder) {
+        root = null;
+        return reconstruct(preOrder, inOrder, 0, preOrder.length - 1,
+                0, inOrder.length - 1);
+    }
+
+    public void preOrder() {
+        preOrder(root);
+        System.out.println();
+    }
+
+    private void preOrder(BinaryTreeNode root) {
+        if (root != null) {
+            System.out.print(root + ", ");
+            preOrder(root.pLeft);
+            preOrder(root.pRight);
+        }
+    }
+
+    private BinaryTreeNode reconstruct(int[] preOrder, int[] inOrder,
+                                       int startPre, int endPre,
+                                       int startIn, int endIn) {
         int lengthPre = endPre - startPre + 1;
-        int lengthIn = endIn - startIn +1;
+        int lengthIn = endIn - startIn + 1;
         if (lengthPre == 0 || lengthIn == 0) {
             return null;
         }
@@ -35,10 +55,13 @@ public class BinaryTree {
         int rightLength = endIn - rootValueIndexOfInOrder;
 
         BinaryTreeNode rootNode = new BinaryTreeNode(rootValue);
+        if (root == null) {
+            root = rootNode;
+        }
         if (leftLength > 0) {
             rootNode.pLeft = reconstruct(preOrder, inOrder,
                     startPre + 1, startPre + leftLength,
-                    startIn, startIn + leftLength -1);
+                    startIn, startIn + leftLength - 1);
         }
 
         if (rightLength > 0) {
@@ -47,7 +70,6 @@ public class BinaryTree {
                     rootValueIndexOfInOrder + 1, rootValueIndexOfInOrder + rightLength);
 
         }
-
         return rootNode;
     }
 
@@ -56,26 +78,19 @@ public class BinaryTree {
         int[] preOrder = {1, 2, 4, 7, 3, 5, 6, 8};
         int[] inOrder = {4, 7, 2, 1, 5, 3, 8, 6};
         BinaryTree binaryTree = new BinaryTree();
-        BinaryTreeNode root = binaryTree.reconstruct(preOrder, inOrder,
-                0, preOrder.length - 1,
-                0,inOrder.length - 1);
-        System.out.println(root);
+        binaryTree.reconstruct(preOrder, inOrder);
+        binaryTree.preOrder();
 
         //没有右子结点
         int[] preOrder1 = {1, 2, 3, 4, 5};
         int[] inOrder1 = {5, 4, 3, 2, 1};
-         root = binaryTree.reconstruct(preOrder1, inOrder1,
-                0, preOrder1.length - 1,
-                0,inOrder1.length - 1);
-        System.out.println(root);
+        binaryTree.reconstruct(preOrder1, inOrder1);
+        binaryTree.preOrder();
 
         //没有左子结点
         int[] preOrder2 = {1, 2, 3, 4, 5};
         int[] inOrder2 = {1, 2, 3, 4, 5};
-        root = binaryTree.reconstruct(preOrder2, inOrder2,
-                0, preOrder2.length - 1,
-                0,inOrder2.length - 1);
-        System.out.println(root);
-
+        binaryTree.reconstruct(preOrder2, inOrder2);
+        binaryTree.preOrder();
     }
 }
