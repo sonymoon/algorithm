@@ -19,6 +19,10 @@ public class BinaryTree {
         System.out.println();
     }
 
+    public BinaryTreeNode getRoot() {
+        return root;
+    }
+
     private void preOrder(BinaryTreeNode root) {
         if (root != null) {
             System.out.print(root + ", ");

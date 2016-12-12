@@ -20,7 +20,7 @@ public class SubstructureInTree {
         if (tree1 != null && tree2 != null) {
             result = isSame(tree1, tree2);
             if (result) {
-                isSubTree(tree1, tree2);
+                result = isSubTree(tree1, tree2);
             }
             if (!result) {
                 result = hasSubtree(tree1.pLeft, tree2);
@@ -35,13 +35,12 @@ public class SubstructureInTree {
 
 
     public boolean isSubTree(BinaryTreeNode tree1, BinaryTreeNode tree2) {
-        if (tree1 == null) {
-            return false;
-        }
         if (tree2 == null) {
             return true;
         }
-
+        if (tree1 == null) {
+            return false;
+        }
         if (tree1.value != tree2.value) {
             return false;
         }
@@ -59,6 +58,8 @@ public class SubstructureInTree {
         binaryTree.reconstruct(new int[]{8, 8, 9, 2, 4, 7, 7}, new int[]{9, 8, 4, 2, 7, 8, 7});
 
         BinaryTree subTree = new BinaryTree();
-        subTree.reconstruct(new int[]{}, new int[]{});
+        subTree.reconstruct(new int[]{8, 9, 3}, new int[]{9, 8, 3});
+
+        System.out.println(new SubstructureInTree().hasSubtree(binaryTree.getRoot(), subTree.getRoot()));
     }
 }
