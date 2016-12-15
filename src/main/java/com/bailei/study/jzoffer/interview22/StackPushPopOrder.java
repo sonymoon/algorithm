@@ -9,15 +9,14 @@ public class StackPushPopOrder {
 
     private Stack<Integer> stackForPush;
 
-    private Stack<Integer> stackForPop;
+    private Integer lastPop;
 
     public StackPushPopOrder() {
         stackForPush = new Stack<>();
-        stackForPop = new Stack<>();
     }
 
     /**
-     * 和书中不同的是，用了两个栈，一个存储上一次pop的元素，一个存储push序列的元素
+     * 和书中略有不同
      *
      * @param pushArry
      * @param popArry
@@ -26,8 +25,7 @@ public class StackPushPopOrder {
     public boolean isPopOrder(int[] pushArry, int[] popArry) {
         for (int popValue : popArry) {
             if (!stackForPush.isEmpty() && stackForPush.peek() == popValue) {
-                stackForPush.pop();
-                stackForPop.push(popValue);
+                lastPop = stackForPush.pop();
             } else {
                 int pushIndex = -1;
                 int popIndex = -1;
@@ -35,7 +33,7 @@ public class StackPushPopOrder {
                     if (popValue == pushArry[i]) {
                         pushIndex = i;
                     }
-                    if (!stackForPop.isEmpty() && stackForPop.peek() == pushArry[i]) {
+                    if (lastPop != null && lastPop == pushArry[i]) {
                         popIndex = i;
                     }
                 }
@@ -46,8 +44,7 @@ public class StackPushPopOrder {
                     stackForPush.push(pushArry[i]);
                 }
                 if (stackForPush.peek() == popValue) {
-                    stackForPush.pop();
-                    stackForPop.push(popValue);
+                    lastPop = stackForPush.pop();
                 } else {//该入栈的都入栈了，弹出的数却不在栈顶，只能说明这个数不能在此刻弹出
                     return false;
                 }
