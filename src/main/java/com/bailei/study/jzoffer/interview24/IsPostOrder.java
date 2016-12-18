@@ -33,7 +33,6 @@ public class IsPostOrder {
                     return false;
                 }
             }
-            return check(arry, startIndex, leftIndex); //左子树序列递归验证
         }
         if (rightIndex >= startIndex && rightIndex <= endIndex) {//左子树所有结点必须大于跟节点
             for (int i = rightIndex; i <= endIndex; i++) {
@@ -41,9 +40,8 @@ public class IsPostOrder {
                     return false;
                 }
             }
-            return check(arry, rightIndex, endIndex - 1);
         }
-        return true;
+        return  check(arry, startIndex, leftIndex) &&  check(arry, rightIndex, endIndex - 1); //左右子树序列递归验证;
     }
 
     public static void main(String[] args) {
