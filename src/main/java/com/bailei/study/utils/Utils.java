@@ -1,13 +1,14 @@
 package com.bailei.study.utils;
 
 import com.bailei.study.jzoffer.interview13.ListNode;
+import com.bailei.study.jzoffer.interview26.ComplexListNode;
 
 /**
  * Created by bailei on 16/12/10.
  */
 public class Utils {
 
-    public static  void printList(ListNode head) {
+    public static void printList(ListNode head) {
         if (head == null) return;
         StringBuilder str = new StringBuilder();
         str.append(head.value);
@@ -16,6 +17,22 @@ public class Utils {
             p = p.next;
             if (p != null)
                 str.append("=>" + p.value);
+        }
+        System.out.println(str.toString());
+    }
+
+    public static void printList(ComplexListNode head) {
+        if (head == null) return;
+        StringBuilder str = new StringBuilder("head");
+        ComplexListNode p = head;
+        while (p != null) {
+            if (p != null) {
+                if (p.sibling != null) {
+                    System.out.println(p + "=>" + p.sibling);
+                }
+                str.append("=>" + p.value);
+            }
+            p = p.next;
         }
         System.out.println(str.toString());
     }
