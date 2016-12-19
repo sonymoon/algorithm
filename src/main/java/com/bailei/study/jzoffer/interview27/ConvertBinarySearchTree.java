@@ -10,9 +10,16 @@ import com.bailei.study.utils.StdOut;
  */
 public class ConvertBinarySearchTree {
 
+    /**
+     * 1、将二叉搜索树中序遍历便可排序
+     * 2、中序遍历顺序的前一节点，右指针指向遍历的后一个结点， 后一个节点的左指针指向前一个节点
+     * 这样没有破坏还没遍历到的树结构，也完成了转换
+     *
+     * @param bst
+     */
     public void convert(BST bst) {
         BST.Node root = bst.getRoot();  //改了BST.Node可见性为包级别
-        
+
 
     }
 
