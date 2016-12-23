@@ -1,8 +1,5 @@
 package com.bailei.study.jvm;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * Created by bailei on 16/12/22.
  * 方法区和常量池－－》即永久代溢出
@@ -11,10 +8,9 @@ import java.util.List;
 public class RunTimeConstantPoolOOM {
 
     public static void main(String[] args) {
-        List<String> list = new ArrayList<>();
-        int i = 0;
-        while (true) {
-            list.add(String.valueOf(i++).intern());
-        }
+        String str1 = new StringBuilder("test1").append("test2").toString();
+        System.out.println(str1.intern() == str1);
+        String str2 = new StringBuilder("ja").append("va").toString();
+        System.out.println(str2.intern() == str2);
     }
 }
