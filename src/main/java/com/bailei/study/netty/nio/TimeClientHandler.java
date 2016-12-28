@@ -1,4 +1,4 @@
-package com.bailei.study.nio;
+package com.bailei.study.netty.nio;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;

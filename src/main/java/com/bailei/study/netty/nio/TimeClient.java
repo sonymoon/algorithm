@@ -1,10 +1,10 @@
-package com.bailei.study.nio;
+package com.bailei.study.netty.nio;
 
 /**
  * Created by bailei on 16/12/28.
- * NIO 实现回写 时间戳
  */
-public class TimeServer {
+public class TimeClient {
+
 
     public static void main(String[] args) {
         int port = 8080;
@@ -12,9 +12,10 @@ public class TimeServer {
             try {
                 port = Integer.valueOf(args[0]);
             } catch (NumberFormatException e) {
+                e.printStackTrace();
+                System.exit(1);
             }
         }
-        MultiplexerTimeServer mutiplexerTimeServer = new MultiplexerTimeServer(port);
-        new Thread(mutiplexerTimeServer, "NIO-MultiplexerTimeServer").start();
+        new Thread(new TimeClientHandler("127.0.0.1", port)).start();
     }
 }
