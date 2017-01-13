@@ -14,6 +14,9 @@ import io.netty.handler.codec.string.StringDecoder;
 import io.netty.handler.logging.LogLevel;
 import io.netty.handler.logging.LoggingHandler;
 
+import java.util.HashMap;
+import java.util.HashSet;
+
 /**
  * Created by bailei on 16/12/29.
  */
@@ -51,6 +54,10 @@ public class EchoServer {
     }
 
     public static void main(String[] args) {
+        new HashMap<String, String>() {{
+            put(null, null);
+        }};
+        new HashSet<String>(){{add("e");}};
         new EchoServer().bind(8080);
     }
 }
