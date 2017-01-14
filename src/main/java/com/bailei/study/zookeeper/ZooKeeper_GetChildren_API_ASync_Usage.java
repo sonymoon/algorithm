@@ -2,9 +2,7 @@ package com.bailei.study.zookeeper;
 
 
 import org.apache.zookeeper.*;
-import org.apache.zookeeper.data.Stat;
 
-import java.util.List;
 import java.util.concurrent.CountDownLatch;
 
 /**
@@ -26,13 +24,9 @@ public class ZooKeeper_GetChildren_API_ASync_Usage implements Watcher {
 
         zk.create(path + "/c1", "".getBytes(), ZooDefs.Ids.OPEN_ACL_UNSAFE, CreateMode.EPHEMERAL);
 
-        zk.getChildren(path, true, new AsyncCallback.Children2Callback() {
-            @Override
-            public void processResult(int rc, String path, Object ctx, List<String> children, Stat stat) {
+        zk.getChildren(path, true, (rc, path1, ctx, children, stat) ->
                 System.out.println("returnCode=" + rc +
-                        ", path=" + path + ", children=" + children + ", stat=" + stat);
-            }
-        }, null);
+                        ", path=" + path1 + ", children=" + children + ", stat=" + stat), null);
 
         zk.create(path + "/c2", "".getBytes(), ZooDefs.Ids.OPEN_ACL_UNSAFE, CreateMode.EPHEMERAL);
 
