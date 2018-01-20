@@ -8,6 +8,12 @@ import com.bailei.study.jzoffer.interview26.ComplexListNode;
  */
 public class Utils {
 
+
+    public static void main(String[] args) {
+        System.out.println(System.getProperty("PATH"));
+        System.out.println(System.getenv("ROCKETMQ_HOME"));
+    }
+
     public static void printList(ListNode head) {
         if (head == null) return;
         StringBuilder str = new StringBuilder();
@@ -36,5 +42,6 @@ public class Utils {
         }
         System.out.println(str.toString());
     }
+
 
 }
