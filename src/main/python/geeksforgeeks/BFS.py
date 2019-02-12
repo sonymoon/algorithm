@@ -10,18 +10,19 @@ class Graph:
     def addEdge(self, u, v):
         self.graph[u].append(v)
 
-    def BFS(self, s):
+    def BFS(self):
         visited = [False] * (max(self.graph.keys()) + 1)
-        queue = [s]
-        visited[s] = True
-
-        while queue:
-            s = queue.pop(0)
-            print(s, end=" ")
-            for i in self.graph[s]:
-                if not visited[i]:
-                    queue.append(i)
-                    visited[i] = True
+        queue = []
+        for u in self.graph.keys():
+            if not visited[u]:
+                queue.append(u)
+            while queue:
+                s = queue.pop(0)
+                print(s, end=" ")
+                for i in self.graph[s]:
+                    if not visited[i]:
+                        queue.append(i)
+                        visited[i] = True
 
 
 # Driver code
@@ -41,4 +42,4 @@ g.addEdge(6, 6)
 print("Following is Breadth First Traversal"
       " (starting from vertex 2)")
 print('graph length ', len(g.graph))
-g.BFS(2)
+g.BFS()
