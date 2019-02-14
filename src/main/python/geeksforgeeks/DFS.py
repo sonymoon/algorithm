@@ -18,7 +18,7 @@ class Graph:
                 queue.append(u)
             while queue:
                 s = queue.pop(0)
-                print(s, end='')
+                print s + ' '
                 for i in self.graph[s]:
                     if not visited[i]:
                         queue.append(i)
