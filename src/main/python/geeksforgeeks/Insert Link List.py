@@ -23,11 +23,25 @@ class SortedLinkList:
             new_node.next = current.next
             current.next = new_node
 
+    def delete(self, node):
+        if self.head.data == node.data:
+            self.head = self.head.next
+            return
+        # find the node just before the target node
+        p = self.head
+        while p.next is not None and p.next.data != node.data:
+            p = p.next
+        if not p.next:  # not found the target node in all nodes, just do nothing
+            return
+        else:
+            p.next = p.next.next
+
     def printList(self):
         current = self.head
         while current is not None:
             print current.data,
             current = current.next
+        print ''
 
 
 llist = SortedLinkList()
@@ -38,4 +52,9 @@ llist.insert(LinkNode(3))
 llist.insert(LinkNode(1))
 llist.insert(LinkNode(9))
 
+llist.printList()
+
+deletedItem = 11
+llist.delete(LinkNode(deletedItem))
+print 'after delete ', deletedItem, 'the list is ',
 llist.printList()
