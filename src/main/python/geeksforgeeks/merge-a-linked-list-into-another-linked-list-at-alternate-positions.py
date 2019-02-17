@@ -16,7 +16,6 @@ class Solution:
         p1 = self.head1
         p2 = self.head2
         while p1 and p2:
-
             p2_next = p2.next
             p1_next = p1.next
 
@@ -54,8 +53,9 @@ def pushBeforeHead(num, head):
         head = new
     return head
 
-arr1 = [1,2,3]
-arr2 = [12, 10, 2,4,6]
+
+arr1 = [1, 2, 3]
+arr2 = [12, 10, 2, 4, 6]
 head1, head2 = None, None
 for i in reversed(arr1):
     head1 = pushBeforeHead(i, head1)
