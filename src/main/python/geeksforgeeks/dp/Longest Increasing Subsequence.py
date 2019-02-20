@@ -21,7 +21,7 @@ def lis_mem(arr):
     n = len(arr)
     if n == 0 or n == 1:
         return n
-    lis = [1] * n
+    lis = [1] * n # store max lis of every sub array 0...n -1
     for i in range(1, n):
         for j in range(0, i):
             if arr[j] < arr[i] and lis[i] < lis[j] + 1:
