@@ -29,7 +29,8 @@ def find_kth_smallest(arr, k, l, r):
     elif p - l > k - 1:  # 则第k小的在左边
         return find_kth_smallest(arr, k, l, p - 1)
     else:
-        return find_kth_smallest(arr, k - (p - l), p + 1, r)
+        # 比如找l=0 r = 3 p =2 那么0.1.2都是比第k小元素小的 故(p-l) + 1
+        return find_kth_smallest(arr, k - (p - l + 1), p + 1, r)
 
 
 if __name__ == "__main__":
