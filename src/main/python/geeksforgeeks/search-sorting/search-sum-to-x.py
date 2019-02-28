@@ -1,3 +1,5 @@
+# -*- coding:utf-8 -*-
+
 def quick_sort(arr, l, r):
     if l >= r:
         return
@@ -17,7 +19,7 @@ def partition(arr, l, r):
     arr[i], arr[r] = arr[r], arr[i]
     return i
 
-
+# o(n^2)
 def find_pair_closest(arr, sum):
     n = len(arr)
     quick_sort(arr, 0, n - 1)
@@ -43,6 +45,26 @@ def find_pair_closest(arr, sum):
         return []
 
 
+def find_pair_method2(arr, sum):
+    n = len(arr)
+    quick_sort(arr, 0, n - 1)
+    low = 0
+    high = n - 1
+    import  sys
+    diff = sys.maxint
+    result = []
+    while low < high:
+        if abs(arr[low] + arr[high] - sum) < diff:
+            diff = abs(arr[low] + arr[high] - sum)
+            result = [arr[low], arr[high]]
+        elif arr[low] + arr[high] < sum:
+            low += 1
+        else:
+            high -= 1
+    return result
+
+
+
 arr = [10, 22, 28, 29, 30, 40]
 
-print find_pair_closest(arr, 50)
+print find_pair_method2(arr, 50)
