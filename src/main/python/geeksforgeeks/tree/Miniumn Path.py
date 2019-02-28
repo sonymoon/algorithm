@@ -11,13 +11,13 @@ def pathHeight(root, current):
     return min(lh, rh)
 
 
-from TreeNode import TreeNode
+from Node import Node
 
-root = TreeNode(1)
-root.left = TreeNode(2)
-root.right = TreeNode(3)
+root = Node(1)
+root.left = Node(2)
+root.right = Node(3)
 
-root.left.left = TreeNode(4)
-root.left.right = TreeNode(5)
+root.left.left = Node(4)
+root.left.right = Node(5)
 
 print pathHeight(root, 1)
