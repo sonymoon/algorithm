@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-
+# o(n^2)
 def next_great_number(arr):
     result = []
     n = len(arr)
@@ -19,7 +19,29 @@ def next_great_number(arr):
         print x,
 
 
-arr = [4, 5, 2, 25]
+# o(n^2)
+# 1 一个stack，保存的是比后面元素大的值，因为还没找到比自己大的。 初始保存第一个元素
+# 2 从第二个元素，如果stack中的元素比其小，那么就找到了next greater one. 循环一直到元素为空
+# 3 如果stack弹出比其大，那么这个元素需要进栈，再次执行2
+def next_great_number_2(arr):
+    n = len(arr)
 
-print next_great_number(arr)
-print next_great_number([13, 7, 6, 12])
+    stack = [arr[0]]
+    for i in range(1, n):
+        if stack:
+            next = arr[i]
+            element = stack.pop()
+            while element < next:
+                print element, '->', next
+                if stack:
+                    element = stack.pop()
+                else:
+                    break
+        if element > next:
+            stack.append(element)
+        stack.append(next)
+
+    while stack:
+        print stack.pop(0), '->', -1
+
+next_great_number_2([11, 13, 21, 3])
